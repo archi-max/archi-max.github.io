@@ -1,4 +1,5 @@
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const articles = [
   {
@@ -7,8 +8,9 @@ const articles = [
       "After running distributed systems at scale for 5 years, here are the patterns and anti-patterns I've learned to watch for...",
     date: "Jan 15, 2025",
     readTime: "12 min read",
-    link: "#",
+    link: "/writing/distributed-systems",
     category: "Engineering",
+    isInternal: true,
   },
   {
     title: "Why I Switched from Microservices Back to a Modular Monolith",
@@ -18,6 +20,7 @@ const articles = [
     readTime: "8 min read",
     link: "#",
     category: "Architecture",
+    isInternal: false,
   },
   {
     title: "The Art of Technical Decision Making",
@@ -27,6 +30,7 @@ const articles = [
     readTime: "6 min read",
     link: "#",
     category: "Leadership",
+    isInternal: false,
   },
   {
     title: "Understanding AI Code Assistants: A Technical Deep Dive",
@@ -36,6 +40,7 @@ const articles = [
     readTime: "15 min read",
     link: "#",
     category: "AI/ML",
+    isInternal: false,
   },
 ];
 
@@ -54,12 +59,9 @@ export function WritingSection() {
           </p>
 
           <div className="space-y-6">
-            {articles.map((article) => (
-              <article
-                key={article.title}
-                className="card-blog group cursor-pointer"
-              >
-                <a href={article.link} className="block">
+            {articles.map((article) => {
+              const content = (
+                <>
                   <div className="flex items-center gap-3 mb-2">
                     <span className="px-2 py-0.5 text-xs font-medium rounded bg-accent text-accent-foreground">
                       {article.category}
@@ -86,9 +88,26 @@ export function WritingSection() {
                     Read more
                     <ArrowRight size={14} />
                   </span>
-                </a>
-              </article>
-            ))}
+                </>
+              );
+
+              return (
+                <article
+                  key={article.title}
+                  className="card-blog group cursor-pointer"
+                >
+                  {article.isInternal ? (
+                    <Link to={article.link} className="block">
+                      {content}
+                    </Link>
+                  ) : (
+                    <a href={article.link} className="block">
+                      {content}
+                    </a>
+                  )}
+                </article>
+              );
+            })}
           </div>
 
           <div className="mt-8 text-center">
