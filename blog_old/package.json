@@ -1,0 +1,22 @@
+{
+  "name": "ansh-portfolio-blog",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "scratch dev --base /blog/",
+    "build": "scratch build --base /blog/ && node scripts/generate-manifest.mjs",
+    "preview": "scratch preview --base /blog/",
+    "clean": "rimraf dist",
+    "build:copy": "npm run build && npm run blog:sync --prefix .."
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
+    "postcss": "^8.5.6",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
