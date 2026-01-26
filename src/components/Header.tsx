@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { fullName, personalData } from "@/data/personalData";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -35,22 +36,35 @@ export function Header() {
             href="#"
             className="font-display text-xl font-semibold text-heading hover:text-primary transition-colors"
           >
-            Portfolio
+            {fullName || "Portfolio"}
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="link-underline text-body font-medium hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden md:flex items-center gap-6">
+            <ul className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="link-underline text-body font-medium hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {personalData.resume_url && (
+              <a
+                href={personalData.resume_url}
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
+            )}
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -77,6 +91,19 @@ export function Header() {
                   </a>
                 </li>
               ))}
+              {personalData.resume_url && (
+                <li>
+                  <a
+                    href={personalData.resume_url}
+                    className="block px-6 py-3 text-body font-medium hover:text-primary hover:bg-muted transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Resume
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         )}

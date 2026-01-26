@@ -1,27 +1,19 @@
+import type { LucideIcon } from "lucide-react";
 import { BookOpen, Code2, Lightbulb, Users } from "lucide-react";
+import { personalData, type HighlightIcon } from "@/data/personalData";
 
-const highlights = [
-  {
-    icon: Code2,
-    title: "Engineering",
-    description: "8+ years building scalable web applications and distributed systems",
-  },
-  {
-    icon: Lightbulb,
-    title: "Product",
-    description: "Shipped products used by millions, from 0-1 and beyond",
-  },
-  {
-    icon: Users,
-    title: "Leadership",
-    description: "Led engineering teams of 5-15 people across multiple time zones",
-  },
-  {
-    icon: BookOpen,
-    title: "Writing",
-    description: "Published technical articles with 100k+ combined reads",
-  },
-];
+const highlightIcons: Record<HighlightIcon, LucideIcon> = {
+  code2: Code2,
+  lightbulb: Lightbulb,
+  users: Users,
+  bookopen: BookOpen,
+};
+
+const highlights = personalData.about?.highlights ?? [];
+const aboutParagraphs = personalData.about?.paragraphs ?? [];
+
+const getHighlightIcon = (icon?: HighlightIcon) =>
+  highlightIcons[icon ?? "code2"] ?? Code2;
 
 export function AboutSection() {
   return (
@@ -34,35 +26,25 @@ export function AboutSection() {
           <div className="divider-subtle mb-8" />
           
           <div className="prose-blog text-lg mb-12">
-            <p className="mb-4">
-              I'm a software engineer with a deep interest in building products that 
-              genuinely improve people's lives. My work spans from low-level systems 
-              programming to high-level product strategy—I believe the best engineers 
-              understand the full stack, both technical and human.
-            </p>
-            <p className="mb-4">
-              Before my current role, I spent time at early-stage startups where I 
-              learned the value of moving fast while maintaining quality. I've also 
-              worked at larger companies where I gained appreciation for the challenges 
-              of scale and organizational complexity.
-            </p>
-            <p>
-              When I'm not coding, you'll find me reading about cognitive science, 
-              practicing photography, or exploring the Bay Area's hiking trails. I 
-              believe in the power of cross-disciplinary thinking—some of my best 
-              engineering insights have come from unexpected sources.
-            </p>
+            {aboutParagraphs.map((paragraph, index) => (
+              <p key={index} className={index < aboutParagraphs.length - 1 ? "mb-4" : undefined}>
+                {paragraph}
+              </p>
+            ))}
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {highlights.map((item, index) => (
+            {highlights.map((item, index) => {
+              const Icon = getHighlightIcon(item.icon);
+
+              return (
               <div
                 key={item.title}
                 className="card-blog flex gap-4"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-primary" />
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-semibold text-heading mb-1">
@@ -71,7 +53,8 @@ export function AboutSection() {
                   <p className="text-body text-sm">{item.description}</p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

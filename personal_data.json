@@ -1,0 +1,217 @@
+{
+    "first_name": "Ansh",
+    "last_name": "Tulsyan",
+    "role": "Software Engineer & Product Builder",
+    "tagline": "Welcome to my corner of the internet",
+    "summary": "I build thoughtful software products and enjoy working across the stack. Lately I'm especially excited about data-heavy experiences, reliable systems, and making tools that help teams move faster.",
+    "location": "Austin, TX",
+    "address": "Austin, TX",
+    "resume_url": "/resume.pdf",
+    "about": {
+        "paragraphs": [
+            "I'm a software engineer who loves turning ambiguous problems into reliable products. I care deeply about bridging product thinking with engineering craft so the things we build are both resilient and useful.",
+            "My work often spans backend systems, APIs, and frontends with polish. I'm comfortable collaborating across functions, writing clear docs, and setting up processes that keep teams moving quickly without sacrificing quality.",
+            "Away from the keyboard you'll usually find me reading, sketching ideas, or exploring new places to eat with friends. Curiosity keeps me learning, and I try to bring that spirit into every project."
+        ],
+        "highlights": [
+            {
+                "title": "Engineering",
+                "description": "Experience building scalable web applications and distributed systems",
+                "icon": "code2"
+            },
+            {
+                "title": "Product",
+                "description": "Enjoy collaborating with design and product to ship what users need",
+                "icon": "lightbulb"
+            },
+            {
+                "title": "Leadership",
+                "description": "Comfortable owning initiatives and mentoring teammates",
+                "icon": "users"
+            },
+            {
+                "title": "Writing",
+                "description": "Document ideas clearly so teams can align quickly",
+                "icon": "bookopen"
+            }
+        ]
+    },
+    "contact": {
+        "email": "ansht2@illinois.edu",
+        "phone": "+1 (737) 318-2064",
+        "address": "Austin, TX",
+        "socials": [
+            {
+                "type": "email",
+                "label": "Email",
+                "url": "mailto:ansht2@illinois.edu",
+                "handle": "ansht2@illinois.edu"
+            },
+            {
+                "type": "github",
+                "label": "GitHub",
+                "url": "https://github.com/anshtulsyan",
+                "handle": "@anshtulsyan"
+            },
+            {
+                "type": "linkedin",
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/in/anshtulsyan",
+                "handle": "in/anshtulsyan"
+            },
+            {
+                "type": "twitter",
+                "label": "Twitter",
+                "url": "https://twitter.com/ansh_codes",
+                "handle": "@ansh_codes"
+            }
+        ]
+    },
+    "experience": [
+        {
+            "role": "Senior Software Engineer",
+            "company": "TechCorp AI",
+            "companyUrl": "#",
+            "period": "2022 — Present",
+            "description": "Leading the development of AI-powered developer tools that help engineering teams ship faster. I work across the stack, from designing system architecture to implementing ML pipelines and crafting intuitive user interfaces.",
+            "highlights": [
+                "Architected a real-time code analysis system processing millions of daily requests",
+                "Reduced inference latency by optimizing models and caching strategies",
+                "Mentored junior engineers and shaped engineering best practices"
+            ],
+            "tags": [
+                "TypeScript",
+                "Python",
+                "Kubernetes",
+                "ML Systems"
+            ]
+        },
+        {
+            "role": "Software Engineer",
+            "company": "ScaleUp Inc",
+            "companyUrl": "#",
+            "period": "2019 — 2022",
+            "description": "Built core infrastructure for a B2B SaaS platform serving enterprise customers. Focused on reliability, performance, and developer experience.",
+            "highlights": [
+                "Designed and implemented a multi-tenant architecture supporting 99.99% uptime",
+                "Led migration from monolith to microservices, reducing deployment time",
+                "Created internal tooling that improved developer productivity"
+            ],
+            "tags": [
+                "Go",
+                "PostgreSQL",
+                "AWS",
+                "Terraform"
+            ]
+        },
+        {
+            "role": "Full Stack Developer",
+            "company": "Startup Labs",
+            "companyUrl": "#",
+            "period": "2017 — 2019",
+            "description": "Early engineer at a seed-stage startup, wearing many hats from frontend development to DevOps. Learned to move fast and iterate based on user feedback.",
+            "highlights": [
+                "Built the MVP that secured seed funding",
+                "Implemented real-time collaboration features using WebSockets",
+                "Established engineering practices that scaled with the team"
+            ],
+            "tags": [
+                "React",
+                "Node.js",
+                "MongoDB",
+                "Redis"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "CodeFlow",
+            "description": "An open-source VS Code extension that uses AI to generate code documentation in real-time. Built with TypeScript and the OpenAI API.",
+            "stars": "2.3k",
+            "link": "#",
+            "github": "#",
+            "tags": [
+                "TypeScript",
+                "OpenAI",
+                "VS Code"
+            ],
+            "featured": true
+        },
+        {
+            "title": "DataPipe",
+            "description": "A lightweight ETL framework for Python that makes it easy to build and deploy data pipelines.",
+            "stars": "890",
+            "link": "#",
+            "github": "#",
+            "tags": [
+                "Python",
+                "Apache Airflow",
+                "PostgreSQL"
+            ],
+            "featured": true
+        },
+        {
+            "title": "UIKit Pro",
+            "description": "A comprehensive React component library with 100+ accessible, customizable components. Built with Radix UI and Tailwind CSS.",
+            "stars": "1.5k",
+            "link": "#",
+            "github": "#",
+            "tags": [
+                "React",
+                "Tailwind CSS",
+                "Radix UI"
+            ],
+            "featured": false
+        },
+        {
+            "title": "DevMetrics",
+            "description": "A self-hosted analytics platform for tracking developer productivity metrics. Integrates with GitHub, GitLab, and Jira.",
+            "stars": "450",
+            "link": "#",
+            "github": "#",
+            "tags": [
+                "Go",
+                "TimescaleDB",
+                "React"
+            ],
+            "featured": false
+        }
+    ],
+    "skills": {
+        "Languages": [
+            "TypeScript",
+            "Python",
+            "Go",
+            "Rust",
+            "SQL"
+        ],
+        "Frontend": [
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "Framer Motion",
+            "GraphQL"
+        ],
+        "Backend": [
+            "Node.js",
+            "PostgreSQL",
+            "Redis",
+            "gRPC",
+            "Kafka"
+        ],
+        "Infrastructure": [
+            "AWS",
+            "Kubernetes",
+            "Terraform",
+            "Docker",
+            "CI/CD"
+        ],
+        "AI/ML": [
+            "PyTorch",
+            "LangChain",
+            "Vector DBs",
+            "RAG Systems",
+            "Fine-tuning"
+        ]
+    }
+}

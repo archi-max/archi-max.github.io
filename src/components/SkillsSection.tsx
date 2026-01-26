@@ -1,25 +1,8 @@
-const skillCategories = [
-  {
-    title: "Languages",
-    skills: ["TypeScript", "Python", "Go", "Rust", "SQL"],
-  },
-  {
-    title: "Frontend",
-    skills: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "GraphQL"],
-  },
-  {
-    title: "Backend",
-    skills: ["Node.js", "PostgreSQL", "Redis", "gRPC", "Kafka"],
-  },
-  {
-    title: "Infrastructure",
-    skills: ["AWS", "Kubernetes", "Terraform", "Docker", "CI/CD"],
-  },
-  {
-    title: "AI/ML",
-    skills: ["PyTorch", "LangChain", "Vector DBs", "RAG Systems", "Fine-tuning"],
-  },
-];
+import { personalData } from "@/data/personalData";
+
+const skillCategories = Object.entries(personalData.skills ?? {}).map(
+  ([title, skills]) => ({ title, skills })
+);
 
 export function SkillsSection() {
   return (
@@ -31,26 +14,32 @@ export function SkillsSection() {
           </h2>
           <div className="divider-subtle mb-12" />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category) => (
-              <div key={category.title}>
-                <h3 className="font-display text-lg font-semibold text-heading mb-4">
-                  {category.title}
-                </h3>
-                <ul className="space-y-2">
-                  {category.skills.map((skill) => (
-                    <li
-                      key={skill}
-                      className="flex items-center gap-2 text-body"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {skillCategories.length === 0 ? (
+            <p className="text-subtle">
+              Add skill categories to personal_data.json to list them here.
+            </p>
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {skillCategories.map((category) => (
+                <div key={category.title}>
+                  <h3 className="font-display text-lg font-semibold text-heading mb-4">
+                    {category.title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {category.skills.map((skill) => (
+                      <li
+                        key={skill}
+                        className="flex items-center gap-2 text-body"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

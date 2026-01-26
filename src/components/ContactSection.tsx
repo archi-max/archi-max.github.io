@@ -1,31 +1,28 @@
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Link2, Mail, Twitter } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { personalData, type SocialType } from "@/data/personalData";
 
-const socialLinks = [
-  {
-    name: "Email",
-    href: "mailto:alex@example.com",
-    icon: Mail,
-    handle: "alex@example.com",
-  },
-  {
-    name: "GitHub",
-    href: "https://github.com",
-    icon: Github,
-    handle: "@alexmorgan",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: Linkedin,
-    handle: "in/alexmorgan",
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com",
-    icon: Twitter,
-    handle: "@alexmorgan",
-  },
-];
+const baseSocialLinks = personalData.contact?.socials ?? [];
+
+const socialLinks = personalData.resume_url
+  ? [
+      ...baseSocialLinks,
+      {
+        type: "website" as const,
+        label: "Resume",
+        url: personalData.resume_url,
+        handle: "Download PDF",
+      },
+    ]
+  : baseSocialLinks;
+
+const iconMap: Record<SocialType, LucideIcon> = {
+  email: Mail,
+  github: Github,
+  linkedin: Linkedin,
+  twitter: Twitter,
+  website: Link2,
+};
 
 export function ContactSection() {
   return (
@@ -44,28 +41,36 @@ export function ContactSection() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="card-blog flex items-center gap-3 px-6 py-4 min-w-[200px]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                  <link.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div className="text-left">
-                  <p className="font-medium text-heading text-sm">{link.name}</p>
-                  <p className="text-subtle text-xs">{link.handle}</p>
-                </div>
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              const Icon = iconMap[link.type as SocialType] ?? Link2;
+
+              return (
+                <a
+                  key={`${link.label}-${link.url}`}
+                  href={link.url}
+                  className="card-blog flex items-center gap-3 px-6 py-4 min-w-[200px]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-medium text-heading text-sm">{link.label}</p>
+                    <p className="text-subtle text-xs">{link.handle}</p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
 
-          <p className="text-subtle text-sm">
-            Currently open to senior engineering roles and technical advising opportunities.
-          </p>
+          <div className="text-subtle text-sm space-y-1">
+            <p>Based in {personalData.location || personalData.contact?.address}</p>
+            <p>
+              {personalData.contact?.email}
+              {personalData.contact?.phone ? ` · ${personalData.contact.phone}` : ""}
+            </p>
+          </div>
         </div>
       </div>
     </section>
