@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const articles = [
+type Article = {
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  link: string;
+  category: string;
+  isInternal: boolean;
+};
+
+const fallbackArticles: Article[] = [
   {
     title: "Building Reliable Distributed Systems: Lessons from Production",
     excerpt:
       "After running distributed systems at scale for 5 years, here are the patterns and anti-patterns I've learned to watch for...",
-    date: "Jan 15, 2025",
-    readTime: "12 min read",
-    link: "/writing/distributed-systems",
+    date: "Jan 20, 2025",
+    readTime: "8 min read",
+    link: "/blog/posts/reliability-notes/",
     category: "Engineering",
-    isInternal: true,
+    isInternal: false,
   },
   {
     title: "Why I Switched from Microservices Back to a Modular Monolith",
@@ -28,7 +39,7 @@ const articles = [
       "A framework for making better technical decisions when you don't have all the information...",
     date: "Nov 22, 2024",
     readTime: "6 min read",
-    link: "#",
+    link: "/blog/",
     category: "Leadership",
     isInternal: false,
   },
@@ -38,13 +49,44 @@ const articles = [
       "How modern AI code assistants work under the hood, their limitations, and where they're headed...",
     date: "Oct 15, 2024",
     readTime: "15 min read",
-    link: "#",
+    link: "/blog/",
     category: "AI/ML",
     isInternal: false,
   },
 ];
 
 export function WritingSection() {
+  const [articles, setArticles] = useState<Article[]>(fallbackArticles);
+
+  useEffect(() => {
+    const fetchManifest = async () => {
+      try {
+        const res = await fetch("/blog/posts.json");
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!Array.isArray(data.posts)) return;
+
+        const mapped: Article[] = data.posts.map((post: any) => ({
+          title: post.title,
+          excerpt: post.description ?? "",
+          date: post.date ?? "",
+          readTime: post.readTime ?? "",
+          link: post.link ?? `/blog/posts/${post.slug ?? ""}/`,
+          category: Array.isArray(post.tags) && post.tags.length > 0 ? post.tags[0] : "Writing",
+          isInternal: false,
+        }));
+
+        if (mapped.length > 0) {
+          setArticles(mapped);
+        }
+      } catch (error) {
+        console.warn("Unable to load blog manifest", error);
+      }
+    };
+
+    fetchManifest();
+  }, []);
+
   return (
     <section id="writing" className="py-24">
       <div className="container mx-auto px-6">
@@ -112,7 +154,7 @@ export function WritingSection() {
 
           <div className="mt-8 text-center">
             <a
-              href="#"
+              href="/blog/"
               className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
             >
               View all articles
