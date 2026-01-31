@@ -13,20 +13,43 @@ const projects = [...(personalData.projects ?? [])].sort(
 // Show featured projects on homepage, limited to 4
 const featuredProjects = projects.slice(0, 4);
 
+// Extract top filter categories (you can customize these)
+const TOP_FILTER_TAGS = ["AI", "Web", "Data", "DevTools"];
+
 export function ProjectsSection() {
   const [search, setSearch] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const filteredProjects = useMemo(() => {
-    if (!search.trim()) return featuredProjects;
-    const query = search.toLowerCase();
-    return featuredProjects.filter(
-      (p) =>
-        p.title.toLowerCase().includes(query) ||
-        p.description.toLowerCase().includes(query) ||
-        p.tags.some((t) => t.toLowerCase().includes(query))
+  const handleTagToggle = (tag: string) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     );
-  }, [search]);
+  };
+
+  const filteredProjects = useMemo(() => {
+    let result = featuredProjects;
+
+    if (search.trim()) {
+      const query = search.toLowerCase();
+      result = result.filter(
+        (p) =>
+          p.title.toLowerCase().includes(query) ||
+          p.description.toLowerCase().includes(query) ||
+          p.tags.some((t) => t.toLowerCase().includes(query))
+      );
+    }
+
+    if (selectedTags.length > 0) {
+      result = result.filter((p) =>
+        selectedTags.some((tag) =>
+          p.tags.some((t) => t.toLowerCase().includes(tag.toLowerCase()))
+        )
+      );
+    }
+
+    return result;
+  }, [search, selectedTags]);
 
   return (
     <section id="projects" className="py-24 bg-muted/30">
@@ -46,6 +69,9 @@ export function ProjectsSection() {
               value={search}
               onChange={setSearch}
               placeholder="Filter projects..."
+              tags={TOP_FILTER_TAGS}
+              selectedTags={selectedTags}
+              onTagToggle={handleTagToggle}
             />
           </div>
 
@@ -54,7 +80,7 @@ export function ProjectsSection() {
               Add your projects to personal_data.json to showcase them here.
             </p>
           ) : filteredProjects.length === 0 ? (
-            <p className="text-subtle py-8 text-center">No projects match your search.</p>
+            <p className="text-subtle py-8 text-center">No projects match your filters.</p>
           ) : (
             <div className="columns-1 md:columns-2 gap-4">
               {filteredProjects.map((project) => (
