@@ -30,6 +30,8 @@ export type Experience = {
 export type Project = {
   title: string;
   description: string;
+  longDescription?: string;
+  image?: string;
   stars: string;
   link: string;
   github: string;
