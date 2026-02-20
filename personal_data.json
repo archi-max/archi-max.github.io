@@ -112,6 +112,7 @@
         {
             "title": "3D Avatar Generation",
             "description": "Image-to-3D pipeline using Rodin AI + Mixamo for fully rigged human avatar animations. Multi-provider image models with cost/latency optimization.",
+            "link": "https://www.linkedin.com/posts/anshtulsyan_ai-tech-superflow-activity-7304225890031345664-Cf9N",
             "tags": ["Python", "3D", "GenAI"]
         },
         {
