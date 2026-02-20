@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Twitter, ExternalLink } from "lucide-react";
 import { fullName, personalData } from "@/data/personalData";
 
 export function HeroSection() {
@@ -48,6 +48,7 @@ export function HeroSection() {
       >
         {[
           { href: "mailto:ansht2@illinois.edu", icon: Mail, label: "email", external: false },
+          { href: "tel:+17373182064", icon: Phone, label: "(737) 318-2064", external: false },
           { href: "https://github.com/archi-max", icon: Github, label: "github", external: true },
           { href: "https://twitter.com/__ansht", icon: Twitter, label: "twitter", external: true },
           { href: "https://www.linkedin.com/in/anshtulsyan", icon: Linkedin, label: "linkedin", external: true },
