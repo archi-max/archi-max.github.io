@@ -77,30 +77,29 @@ export default function Toc({ targetSelector = '.lw-content' }) {
             <div>~{Math.max(0, Math.ceil(minutesLeft))} min left</div>
           </div>
         )}
-        <nav className="space-y-2">
-          {(items.length ? items : [{ id: 'loading', text: 'Loading…', level: 2 }]).map((item, idx) => {
-            const isActive = item.id === activeId;
-            const isPlaceholder = item.id === 'loading';
-            return (
-              <a
-                key={`${item.id}-${idx}`}
-                href={isPlaceholder ? undefined : `#${item.id}`}
-                className={`group relative block pl-4 transition-colors ${
-                  item.level === 3 ? 'ml-3' : ''
-                } ${isActive ? 'text-heading font-semibold' : 'hover:text-heading'} ${
-                  isPlaceholder ? 'pointer-events-none text-subtle' : ''
-                }`}
-              >
-                <span
-                  className={`absolute left-[-0.75rem] top-1 h-2 w-2 rounded-full border border-border bg-background transition-transform ${
-                    isActive ? 'scale-110 border-primary bg-primary' : ''
-                  }`}
-                />
-                {item.text}
-              </a>
-            );
-          })}
-        </nav>
+        {items.length > 0 && (
+          <nav className="space-y-2">
+            {items.map((item, idx) => {
+              const isActive = item.id === activeId;
+              return (
+                <a
+                  key={`${item.id}-${idx}`}
+                  href={`#${item.id}`}
+                  className={`group relative block pl-4 transition-colors ${
+                    item.level === 3 ? 'ml-3' : ''
+                  } ${isActive ? 'text-heading font-semibold' : 'hover:text-heading'}`}
+                >
+                  <span
+                    className={`absolute left-[-0.75rem] top-1 h-2 w-2 rounded-full border border-border bg-background transition-transform ${
+                      isActive ? 'scale-110 border-primary bg-primary' : ''
+                    }`}
+                  />
+                  {item.text}
+                </a>
+              );
+            })}
+          </nav>
+        )}
       </div>
     </aside>
   );
