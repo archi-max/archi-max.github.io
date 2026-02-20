@@ -11,22 +11,16 @@ type Article = {
 
 const fallbackArticles: Article[] = [
   {
-    title: "Building Reliable Distributed Systems: Lessons from Production",
+    title: "First Blog!",
+    date: "2026-02-20",
+    link: "/blog/posts/hello/",
+    category: "meta",
+  },
+  {
+    title: "Reliability Notes: Designing for Failure",
     date: "2025-01-20",
     link: "/blog/posts/reliability-notes/",
     category: "Engineering",
-  },
-  {
-    title: "Why I Switched from Microservices Back to a Modular Monolith",
-    date: "2024-12-08",
-    link: "/blog/",
-    category: "Architecture",
-  },
-  {
-    title: "The Art of Technical Decision Making",
-    date: "2024-11-22",
-    link: "/blog/",
-    category: "Leadership",
   },
 ];
 

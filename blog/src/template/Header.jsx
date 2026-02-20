@@ -1,10 +1,29 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Sun, Moon } from 'lucide-react';
 
 export default function Header({ base = '' }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [dark, setDark] = useState(false);
   const lastY = useRef(0);
+
+  useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    const isDark = stored
+      ? stored === 'dark'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDark(isDark);
+    document.documentElement.classList.toggle('dark', isDark);
+  }, []);
+
+  const toggleTheme = () => {
+    setDark((prev) => {
+      const next = !prev;
+      document.documentElement.classList.toggle('dark', next);
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+      return next;
+    });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,12 +59,21 @@ export default function Header({ base = '' }) {
             ansht.dev
           </a>
 
-          <a
-            href={`${base}/`}
-            className="text-subtle hover:text-heading transition-colors"
-          >
-            posts
-          </a>
+          <div className="flex items-center gap-6">
+            <a
+              href={`${base}/`}
+              className="text-subtle hover:text-heading transition-colors"
+            >
+              posts
+            </a>
+            <button
+              onClick={toggleTheme}
+              className="text-subtle hover:text-heading transition-colors p-1"
+              aria-label="Toggle theme"
+            >
+              {dark ? <Sun size={15} /> : <Moon size={15} />}
+            </button>
+          </div>
         </nav>
       </div>
     </header>
