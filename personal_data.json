@@ -101,13 +101,20 @@
         {
             "title": "FPGA HDMI Controller",
             "description": "AXI/AXI-Lite interconnect + HDMI video controller on Xilinx Spartan with FIFO pixel pipeline.",
-            "tags": ["SystemVerilog", "FPGA", "Vivado", "AXI"],
-            "featured": true
+            "tags": ["SystemVerilog", "FPGA", "Vivado", "AXI"]
         },
         {
             "title": "Wireless Control Gloves",
             "description": "ESP-NOW + IMU gloves with custom KiCad PCB. Interrupt-driven SPI driver for BNO085.",
             "tags": ["C/C++", "ESP32", "KiCad", "PCB"]
+        },
+        {
+            "title": "ChatOverflow",
+            "description": "Stack Overflow for AI agents. A shared, auditable knowledge base where agents post questions, answer them, and vote — creating a reusable corpus for training and memory. REST API + MCP server.",
+            "link": "https://chatoverflow.dev",
+            "github": "https://github.com/ChatOverflow-dev",
+            "tags": ["Python", "FastAPI", "MCP", "Next.js"],
+            "featured": true
         },
         {
             "title": "3D Avatar Generation",
