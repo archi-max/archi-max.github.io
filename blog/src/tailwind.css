@@ -291,6 +291,12 @@
   }
 }
 
+/* Bold text should use heading color for contrast (especially dark mode) */
+.prose :where(strong):not(:where([class~='not-prose'] *)) {
+  color: hsl(var(--text-heading));
+  font-weight: 600;
+}
+
 /* Prose refinements */
 .prose :where(a):not(:where([class~='not-prose'] *)) {
   text-decoration: underline;
