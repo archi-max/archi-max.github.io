@@ -1,45 +1,45 @@
 {
     "first_name": "Ansh",
     "last_name": "Tulsyan",
-    "role": "Software Engineer & Product Builder",
-    "tagline": "Welcome to my corner of the internet",
-    "summary": "I build thoughtful software products and enjoy working across the stack. Lately I'm especially excited about data-heavy experiences, reliable systems, and making tools that help teams move faster.",
-    "location": "Austin, TX",
-    "address": "Austin, TX",
+    "role": "Computer Engineering @ UIUC · Research Scientist @ AMD",
+    "tagline": "Building across the stack",
+    "summary": "CE student at UIUC and research scientist at AMD. I build AI tooling for chip verification, write operating systems from scratch, design FPGA controllers and custom PCBs, and implement CUDA kernels. I like understanding systems all the way down.",
+    "location": "Champaign, IL",
+    "address": "Champaign, IL",
     "resume_url": "/resume.pdf",
     "about": {
         "paragraphs": [
-            "I'm a software engineer who loves turning ambiguous problems into reliable products. I care deeply about bridging product thinking with engineering craft so the things we build are both resilient and useful.",
-            "My work often spans backend systems, APIs, and frontends with polish. I'm comfortable collaborating across functions, writing clear docs, and setting up processes that keep teams moving quickly without sacrificing quality.",
-            "Away from the keyboard you'll usually find me reading, sketching ideas, or exploring new places to eat with friends. Curiosity keeps me learning, and I try to bring that spirit into every project."
+            "At AMD, I work on AI-powered tools for design verification \u2014 building LLM gateways, MCP connectors for EDA workflows, and evaluation benchmarks for AI-assisted UVM debugging. The tooling I've built is used by 1,000+ engineers, and I've deployed observability infrastructure monitoring over 1B tokens.",
+            "My projects at UIUC cover the full stack: a RISC-V operating system with a custom filesystem and built-in terminal multiplexer, FPGA-based video controllers with AXI interconnect, custom PCBs with wireless sensor firmware, and GPT implementations in CUDA with FlashAttention v2 and Tensor Core optimization.",
+            "I lead FPGA and LLM workshops at IEEE UIUC and have peer-reviewed publications in ML and AI-assisted chip verification. Won HackIllinois 2024 (Grand Prize)."
         ],
         "highlights": [
             {
-                "title": "Engineering",
-                "description": "Experience building scalable web applications and distributed systems",
+                "title": "Systems",
+                "description": "RISC-V & x86 kernels, device drivers, filesystems, preemptive scheduling",
                 "icon": "code2"
             },
             {
-                "title": "Product",
-                "description": "Enjoy collaborating with design and product to ship what users need",
+                "title": "Hardware",
+                "description": "FPGA design, custom PCBs, RTL verification, embedded firmware",
                 "icon": "lightbulb"
             },
             {
-                "title": "Leadership",
-                "description": "Comfortable owning initiatives and mentoring teammates",
-                "icon": "users"
+                "title": "AI / ML",
+                "description": "CUDA kernels, LLM evaluation & tooling, generative models, publications",
+                "icon": "bookopen"
             },
             {
-                "title": "Writing",
-                "description": "Document ideas clearly so teams can align quickly",
-                "icon": "bookopen"
+                "title": "Teaching & Writing",
+                "description": "IEEE FPGA/LLM workshop lead, peer-reviewed publications, 30+ students taught",
+                "icon": "users"
             }
         ]
     },
     "contact": {
         "email": "ansht2@illinois.edu",
         "phone": "+1 (737) 318-2064",
-        "address": "Austin, TX",
+        "address": "Champaign, IL",
         "socials": [
             {
                 "type": "email",
@@ -50,8 +50,8 @@
             {
                 "type": "github",
                 "label": "GitHub",
-                "url": "https://github.com/anshtulsyan",
-                "handle": "@anshtulsyan"
+                "url": "https://github.com/archi-max",
+                "handle": "@archi-max"
             },
             {
                 "type": "linkedin",
@@ -62,156 +62,74 @@
             {
                 "type": "twitter",
                 "label": "Twitter",
-                "url": "https://twitter.com/ansh_codes",
-                "handle": "@ansh_codes"
+                "url": "https://twitter.com/__ansht",
+                "handle": "@__ansht"
             }
         ]
     },
     "experience": [
         {
-            "role": "Senior Software Engineer",
-            "company": "TechCorp AI",
-            "companyUrl": "#",
-            "period": "2022 — Present",
-            "description": "Leading the development of AI-powered developer tools that help engineering teams ship faster. I work across the stack, from designing system architecture to implementing ML pipelines and crafting intuitive user interfaces.",
+            "role": "Student Research Scientist (AI for Design Verification)",
+            "company": "AMD",
+            "companyUrl": "https://www.amd.com",
+            "period": "May 2024 \u2014 Present",
+            "description": "Working on AI tooling for chip design verification — basically helping engineers use LLMs to debug hardware. Started as a summer research role and stayed on part-time through school.",
             "highlights": [
-                "Architected a real-time code analysis system processing millions of daily requests",
-                "Reduced inference latency by optimizing models and caching strategies",
-                "Mentored junior engineers and shaped engineering best practices"
+                "Wrote the first benchmarking spec and evaluation harness for measuring how well AI tools actually help with chip debugging",
+                "First-authored a peer-reviewed internal paper proposing a reward function and benchmark suite for AI-assisted UVM debugging (top 30% acceptance rate)",
+                "Built an LLM gateway SDK and MCP connectors for EDA workflows (Verdi, simulator logs, docs) — now used by 1,000+ engineers",
+                "Set up LangFuse observability across the org's LLM pipelines, tracking over 1B tokens"
             ],
-            "tags": [
-                "TypeScript",
-                "Python",
-                "Kubernetes",
-                "ML Systems"
-            ]
-        },
-        {
-            "role": "Software Engineer",
-            "company": "ScaleUp Inc",
-            "companyUrl": "#",
-            "period": "2019 — 2022",
-            "description": "Built core infrastructure for a B2B SaaS platform serving enterprise customers. Focused on reliability, performance, and developer experience.",
-            "highlights": [
-                "Designed and implemented a multi-tenant architecture supporting 99.99% uptime",
-                "Led migration from monolith to microservices, reducing deployment time",
-                "Created internal tooling that improved developer productivity"
-            ],
-            "tags": [
-                "Go",
-                "PostgreSQL",
-                "AWS",
-                "Terraform"
-            ]
-        },
-        {
-            "role": "Full Stack Developer",
-            "company": "Startup Labs",
-            "companyUrl": "#",
-            "period": "2017 — 2019",
-            "description": "Early engineer at a seed-stage startup, wearing many hats from frontend development to DevOps. Learned to move fast and iterate based on user feedback.",
-            "highlights": [
-                "Built the MVP that secured seed funding",
-                "Implemented real-time collaboration features using WebSockets",
-                "Established engineering practices that scaled with the team"
-            ],
-            "tags": [
-                "React",
-                "Node.js",
-                "MongoDB",
-                "Redis"
-            ]
+            "tags": ["Python", "LLMs", "MCP", "LangFuse", "UVM", "LiteLLM"]
         }
     ],
     "projects": [
         {
-            "title": "CodeFlow",
-            "description": "An open-source VS Code extension that uses AI to generate code documentation in real-time. Built with TypeScript and the OpenAI API.",
-            "stars": "2.3k",
-            "link": "#",
-            "github": "#",
-            "tags": [
-                "TypeScript",
-                "OpenAI",
-                "VS Code"
-            ],
+            "title": "SakuraOS",
+            "description": "RISC-V OS from scratch. Custom kernel, KTFS filesystem, VirtIO drivers, built-in tmux. Runs DOOM in the browser.",
+            "link": "https://sakuraos.ansht.dev",
+            "github": "https://github.com/huskabyte/sakuraos",
+            "tags": ["C", "RISC-V", "OS", "QEMU"],
             "featured": true
         },
         {
-            "title": "DataPipe",
-            "description": "A lightweight ETL framework for Python that makes it easy to build and deploy data pipelines.",
-            "stars": "890",
-            "link": "#",
-            "github": "#",
-            "tags": [
-                "Python",
-                "Apache Airflow",
-                "PostgreSQL"
-            ],
+            "title": "GPT on GPU",
+            "description": "Core GPT kernels from scratch in CUDA. FlashAttention v2, Tensor Cores, automated profiling harness.",
+            "tags": ["CUDA", "C++", "GPU", "ML"],
             "featured": true
         },
         {
-            "title": "UIKit Pro",
-            "description": "A comprehensive React component library with 100+ accessible, customizable components. Built with Radix UI and Tailwind CSS.",
-            "stars": "1.5k",
-            "link": "#",
-            "github": "#",
-            "tags": [
-                "React",
-                "Tailwind CSS",
-                "Radix UI"
-            ],
-            "featured": false
+            "title": "FPGA HDMI Controller",
+            "description": "AXI/AXI-Lite interconnect + HDMI video controller on Xilinx Spartan with FIFO pixel pipeline.",
+            "tags": ["SystemVerilog", "FPGA", "Vivado", "AXI"],
+            "featured": true
         },
         {
-            "title": "DevMetrics",
-            "description": "A self-hosted analytics platform for tracking developer productivity metrics. Integrates with GitHub, GitLab, and Jira.",
-            "stars": "450",
-            "link": "#",
-            "github": "#",
-            "tags": [
-                "Go",
-                "TimescaleDB",
-                "React"
-            ],
-            "featured": false
+            "title": "Wireless Control Gloves",
+            "description": "ESP-NOW + IMU gloves with custom KiCad PCB. Interrupt-driven SPI driver for BNO085.",
+            "tags": ["C/C++", "ESP32", "KiCad", "PCB"]
+        },
+        {
+            "title": "3D Avatar Generation",
+            "description": "Image-to-3D pipeline using Rodin AI + Mixamo for fully rigged human avatar animations. Multi-provider image models with cost/latency optimization.",
+            "tags": ["Python", "3D", "GenAI"]
+        },
+        {
+            "title": "ECG Signal Classification",
+            "description": "CNN on MIT-BIH arrhythmia data, 98.1% test accuracy. Engineered noise-reduction + feature-extraction pipeline. Published in Proc. IEMTRONICS 2024.",
+            "tags": ["Python", "ML", "Published"]
+        },
+        {
+            "title": "Deep Generative Models",
+            "description": "Trained VAEs with reparameterization trick and KL annealing in PyTorch. Compared latent traversals, reconstruction quality, and FID scores across ablations.",
+            "tags": ["PyTorch", "ML", "Generative"]
         }
     ],
     "skills": {
-        "Languages": [
-            "TypeScript",
-            "Python",
-            "Go",
-            "Rust",
-            "SQL"
-        ],
-        "Frontend": [
-            "React",
-            "Next.js",
-            "Tailwind CSS",
-            "Framer Motion",
-            "GraphQL"
-        ],
-        "Backend": [
-            "Node.js",
-            "PostgreSQL",
-            "Redis",
-            "gRPC",
-            "Kafka"
-        ],
-        "Infrastructure": [
-            "AWS",
-            "Kubernetes",
-            "Terraform",
-            "Docker",
-            "CI/CD"
-        ],
-        "AI/ML": [
-            "PyTorch",
-            "LangChain",
-            "Vector DBs",
-            "RAG Systems",
-            "Fine-tuning"
-        ]
+        "AI / ML": ["PyTorch", "CUDA", "scikit-learn", "vLLM", "TRL"],
+        "LLM Tooling": ["LangFuse", "LiteLLM", "GraphRAG", "MCP", "RAG"],
+        "Systems": ["C/C++", "RISC-V", "x86", "Linux", "Bare-metal"],
+        "Hardware": ["SystemVerilog", "UVM", "Vivado", "KiCad", "ESP32"],
+        "Software": ["Python", "Bash", "Git", "Docker", "CUDA"]
     }
 }

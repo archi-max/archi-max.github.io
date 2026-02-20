@@ -1,0 +1,3 @@
+[submodule "vendor/sakuraos"]
+	path = vendor/sakuraos
+	url = https://github.com/archi-max/sakuraos.git

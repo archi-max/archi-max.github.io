@@ -1,18 +1,37 @@
 import { fullName } from "@/data/personalData";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="py-8 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-subtle text-sm">
-            © {currentYear} {fullName || "Portfolio"}. All rights reserved.
-          </p>
-          <p className="text-subtle text-sm">
-            Built with React & Tailwind CSS
-          </p>
+    <footer className="mt-16 mb-12">
+      <div className="container mx-auto px-6 max-w-2xl">
+        <hr className="divider-subtle mb-8" />
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-subtle">
+          <span>{fullName}</span>
+          <span>·</span>
+          <a
+            href="mailto:ansht2@illinois.edu"
+            className="hover:text-heading transition-colors"
+          >
+            ansht2@illinois.edu
+          </a>
+          <span>·</span>
+          <a
+            href="https://twitter.com/__ansht"
+            className="hover:text-heading transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @__ansht
+          </a>
+          <span>·</span>
+          <a
+            href="https://github.com/archi-max"
+            className="hover:text-heading transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
+          </a>
         </div>
       </div>
     </footer>

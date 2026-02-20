@@ -30,13 +30,11 @@ export type Experience = {
 export type Project = {
   title: string;
   description: string;
-  longDescription?: string;
-  image?: string;
-  stars: string;
-  link: string;
-  github: string;
+  link?: string;
+  github?: string;
+  blog?: string;
   tags: string[];
-  featured: boolean;
+  featured?: boolean;
 };
 
 export type PersonalData = {
@@ -68,4 +66,3 @@ export const personalData = rawPersonalData as PersonalData;
 export const fullName = [personalData.first_name, personalData.last_name]
   .filter(Boolean)
   .join(" ");
-

@@ -11,8 +11,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Source Serif 4', 'Georgia', 'serif'],
         body: ['Source Sans 3', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

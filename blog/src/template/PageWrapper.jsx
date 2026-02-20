@@ -20,11 +20,11 @@ export default function PageWrapper({ children }) {
       <Header base={base} />
 
       <main className="flex-1">
-        <div className="mx-auto max-w-[1180px] px-6 pt-28 pb-16 xl:grid xl:grid-cols-[220px_minmax(0,1fr)] xl:gap-10 xl:items-start flex flex-col gap-10 overflow-visible">
-          <div className="hidden xl:block -ml-6 xl:sticky xl:top-5">
+        <div className="mx-auto max-w-[1180px] px-6 pt-28 pb-16 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10 lg:items-start flex flex-col gap-10 overflow-visible">
+          <div className="hidden lg:block -ml-6 lg:sticky lg:top-5">
             <Toc />
           </div>
-          <article className="lw-content max-w-3xl flex-1 prose prose-lg prose-headings:text-heading prose-headings:font-semibold prose-a:text-primary prose-a:underline prose-a:underline-offset-4 prose-a:transition-colors prose-blockquote:border-primary prose-blockquote:bg-accent/30 prose-blockquote:italic">
+          <article className="lw-content max-w-3xl flex-1 prose prose-lg prose-headings:text-heading prose-headings:font-semibold prose-a:text-primary prose-a:underline prose-a:underline-offset-4 prose-a:transition-colors prose-blockquote:border-border prose-blockquote:not-italic">
             {children}
           </article>
         </div>
