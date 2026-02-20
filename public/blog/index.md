@@ -10,4 +10,4 @@ Notes on systems, hardware, AI tooling, and things I've learned building stuff.
 
 ---
 
-- [First Blog!](/posts/hello/) — *Feb 2026*
+- [First Blog!](/blog/posts/hello/) — *Feb 2026*
