@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "title": "First Blog!",
+      "date": "20 Feb 2026",
+      "tags": [
+        "meta"
+      ],
+      "slug": "hello",
+      "link": "/blog/posts/hello/"
+    }
+  ]
+}
