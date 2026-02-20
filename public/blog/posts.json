@@ -8,13 +8,6 @@
       ],
       "slug": "hello",
       "link": "/blog/posts/hello/"
-    },
-    {
-      "title": "Reliability Notes: Designing for Failure",
-      "date": "20 Jan 2025",
-      "tags": [],
-      "slug": "reliability-notes",
-      "link": "/blog/posts/reliability-notes/"
     }
   ]
 }

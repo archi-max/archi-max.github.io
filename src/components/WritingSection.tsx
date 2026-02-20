@@ -16,12 +16,6 @@ const fallbackArticles: Article[] = [
     link: "/blog/posts/hello/",
     category: "meta",
   },
-  {
-    title: "Reliability Notes: Designing for Failure",
-    date: "2025-01-20",
-    link: "/blog/posts/reliability-notes/",
-    category: "Engineering",
-  },
 ];
 
 function formatDate(dateStr: string): string {

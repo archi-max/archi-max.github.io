@@ -1,4 +1,0 @@
-import{a as D,b as V,c as h,d as H,e as S,g as A,h as $,i as Y,j as g}from"./chunks/index-xxkep74k.js";var E=D(V(),1),q=D(h(),1);function N(K){let f={a:"a",em:"em",h1:"h1",hr:"hr",li:"li",p:"p",ul:"ul",...H(),...K.components};return $(Y,{children:[A(f.h1,{children:"Writing"}),A(f.p,{children:"Notes on systems, hardware, AI tooling, and things I've learned building stuff."}),A(f.hr,{}),$(f.ul,{children:[`
-`,$(f.li,{children:[A(f.a,{href:"/posts/hello/",children:"First Blog!"})," — ",A(f.em,{children:"Feb 2026"})]}),`
-`,$(f.li,{children:[A(f.a,{href:"/posts/reliability-notes/",children:"Reliability Notes: Designing for Failure"})," — ",A(f.em,{children:"Jan 2025"})]}),`
-`]})]})}function T(K={}){let{wrapper:f}={...H(),...K.components};return f?A(f,{...K,children:A(N,{...K})}):N(K)}var P=E.default.createElement(S,{components:g},E.default.createElement(T)),w=document.getElementById("mdx");if(window.__SCRATCH_SSG__)q.hydrateRoot(w,P);else q.createRoot(w).render(P);
