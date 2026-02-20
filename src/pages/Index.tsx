@@ -5,6 +5,7 @@ import { WritingSection } from "@/components/WritingSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { Footer } from "@/components/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Reveal } from "@/components/Reveal";
 import { AnimatedDivider } from "@/components/AnimatedDivider";
 import { SakuraTerminal } from "@/components/SakuraTerminal";
@@ -14,6 +15,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgress />
       <Header />
       <main className="container mx-auto px-6 max-w-2xl">
         <HeroSection />
@@ -30,7 +32,7 @@ const Index = () => {
           <ProjectsSection onOpenTerminal={() => setTerminalOpen(true)} />
         </Reveal>
 
-        <AnimatedDivider />
+        <div className="my-16" />
 
         <Reveal>
           <ExperienceSection />

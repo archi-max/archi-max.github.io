@@ -2,9 +2,10 @@ import { fullName } from "@/data/personalData";
 
 export function Footer() {
   return (
-    <footer className="mt-16 mb-12">
+    <footer className="mt-20 mb-12">
       <div className="container mx-auto px-6 max-w-2xl">
         <hr className="divider-subtle mb-8" />
+
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-subtle">
           <span>{fullName}</span>
           <span>·</span>
@@ -33,6 +34,10 @@ export function Footer() {
             github
           </a>
         </div>
+
+        <p className="text-[11px] text-subtle/50 mt-4">
+          React + Tailwind. Sakura boots a real RISC-V kernel in your browser.
+        </p>
       </div>
     </footer>
   );

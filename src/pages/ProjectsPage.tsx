@@ -140,7 +140,7 @@ function ProjectItem({ project }: { project: Project }) {
       </p>
       <div className="flex flex-wrap gap-1.5">
         {project.tags.map((tag) => (
-          <span key={tag} className="text-xs text-subtle">
+          <span key={tag} className="text-[11px] font-mono text-subtle bg-muted/60 px-1.5 py-0.5 rounded">
             {tag}
           </span>
         ))}

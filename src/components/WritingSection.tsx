@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { Stagger } from "@/components/Reveal";
 
 type Article = {
@@ -90,14 +90,18 @@ export function WritingSection() {
           <a
             key={article.title}
             href={article.link}
-            className="group flex items-baseline gap-4 py-0.5 hover-lift"
+            className="group flex items-center gap-4 py-1.5 -mx-3 px-3 rounded-md hover:bg-muted/40 transition-colors"
           >
             <span className="text-xs text-subtle tabular-nums flex-shrink-0 w-16">
               {formatDate(article.date)}
             </span>
-            <span className="text-body group-hover:text-primary transition-colors text-sm leading-snug">
+            <span className="text-body group-hover:text-heading transition-colors text-sm leading-snug flex-1">
               {article.title}
             </span>
+            <ChevronRight
+              size={14}
+              className="text-subtle opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 flex-shrink-0"
+            />
           </a>
         ))}
       </Stagger>
