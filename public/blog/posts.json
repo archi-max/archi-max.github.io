@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "[Application] FIG Fellowship — Insurance & Liability for Frontier AI Safety",
+      "date": "26 Feb 2026",
+      "tags": [
+        "application",
+        "fig",
+        "ai governance",
+        "ai safety"
+      ],
+      "slug": "fig-application",
+      "link": "/blog/posts/fig-application/"
+    },
+    {
       "title": "First Blog!",
       "date": "20 Feb 2026",
       "tags": [

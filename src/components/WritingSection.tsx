@@ -11,6 +11,12 @@ type Article = {
 
 const fallbackArticles: Article[] = [
   {
+    title: "[Application] FIG Fellowship — Insurance & Liability for Frontier AI Safety",
+    date: "2026-02-26",
+    link: "/blog/posts/fig-application/",
+    category: "application",
+  },
+  {
     title: "First Blog!",
     date: "2026-02-20",
     link: "/blog/posts/hello/",
@@ -27,6 +33,11 @@ function formatDate(dateStr: string): string {
   }
 }
 
+function getDateValue(dateStr: string): number {
+  const parsed = Date.parse(dateStr);
+  return Number.isNaN(parsed) ? 0 : parsed;
+}
+
 export function WritingSection() {
   const [articles, setArticles] = useState<Article[]>(fallbackArticles);
 
@@ -38,15 +49,17 @@ export function WritingSection() {
         const data = await res.json();
         if (!Array.isArray(data.posts)) return;
 
-        const mapped: Article[] = data.posts.map((post: any) => ({
-          title: post.title,
-          date: post.date ?? "",
-          link: post.link ?? `/blog/posts/${post.slug ?? ""}/`,
-          category:
-            Array.isArray(post.tags) && post.tags.length > 0
-              ? post.tags[0]
-              : "Writing",
-        }));
+        const mapped: Article[] = data.posts
+          .map((post: any) => ({
+            title: post.title,
+            date: post.date ?? "",
+            link: post.link ?? `/blog/posts/${post.slug ?? ""}/`,
+            category:
+              Array.isArray(post.tags) && post.tags.length > 0
+                ? post.tags[0]
+                : "Writing",
+          }))
+          .sort((a, b) => getDateValue(b.date) - getDateValue(a.date));
 
         if (mapped.length > 0) {
           setArticles(mapped);
