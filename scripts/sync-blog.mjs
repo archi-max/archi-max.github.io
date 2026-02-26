@@ -31,7 +31,7 @@ htmlFiles.forEach((file) => {
     )
     // Prefix CSS + favicon + static asset links so they load under /blog
     .replace(/href="\/tailwind-/g, `href="${basePath}/tailwind-`)
-    .replace(/href="\/favicon.svg/g, `href="${basePath}/favicon.svg`)
+    .replace(/href="\/favicon.svg/g, `href="${basePath}/favicon.svg?v=3`)
     .replace(/href="\/scratch-logo.svg/g, `href="${basePath}/scratch-logo.svg`)
     .replace(/src="\/scratch-logo.svg/g, `src="${basePath}/scratch-logo.svg`)
     .replace(/src="\/DVD_logo.svg/g, `src="${basePath}/DVD_logo.svg`)
